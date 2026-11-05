@@ -1,0 +1,15 @@
+{
+  "case_id": "UC1-S03",
+  "decision": "hold",
+  "reason_code": [
+    "GST_MISMATCH"
+  ],
+  "amount": {
+    "value": 212877.11,
+    "tolerance": 1.0
+  },
+  "must_cite": [
+    "INV-26894-L1"
+  ],
+  "needs_human": true
+}

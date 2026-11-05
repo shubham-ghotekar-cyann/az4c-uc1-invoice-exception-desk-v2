@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Result for use case 1: Invoice exception desk",
+  "type": "object",
+  "required": [
+    "case_id",
+    "decision",
+    "reason_code",
+    "amount",
+    "citations",
+    "needs_human",
+    "trace_id"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "pay",
+        "hold",
+        "escalate"
+      ]
+    },
+    "reason_code": {
+      "type": "string",
+      "enum": [
+        "CLEAN_MATCH",
+        "QTY_SHORT",
+        "PRICE_VARIANCE",
+        "GST_MISMATCH",
+        "DUPLICATE",
+        "BANK_CHANGE_RISK",
+        "VENDOR_BLOCKED",
+        "MISSING_GRN",
+        "UNKNOWN_PO"
+      ]
+    },
+    "amount": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "needs_human": {
+      "type": "boolean"
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "other_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": true
+}

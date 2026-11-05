@@ -1,0 +1,2 @@
+# List every package your code imports, pinned to an exact version (name==version).
+# Python 3.12.

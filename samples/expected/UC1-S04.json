@@ -1,0 +1,16 @@
+{
+  "case_id": "UC1-S04",
+  "decision": "pay",
+  "reason_code": [
+    "CLEAN_MATCH"
+  ],
+  "amount": {
+    "value": 63222.75,
+    "tolerance": 1.0
+  },
+  "must_cite": [
+    "INV-24074-L2",
+    "AGR-3107"
+  ],
+  "needs_human": false
+}

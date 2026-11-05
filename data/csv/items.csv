@@ -1,0 +1,151 @@
+item_code,description,hsn_code,gst_rate,is_synthetic
+IT-2001,Brake caliper bracket,84831981,12,1
+IT-2002,Clutch pressure plate,85117776,18,1
+IT-2003,Wheel hub bolt M12,85443713,18,1
+IT-2004,Radiator hose clamp,73187577,12,1
+IT-2005,Oil seal 45x62,85114472,12,1
+IT-2006,Steering tie-rod end,85115156,28,1
+IT-2007,Headlamp wiring loop,85447934,12,1
+IT-2008,Fuel line connector,84822928,12,1
+IT-2009,Door hinge assembly,85119483,5,1
+IT-2010,Gear shift cable,85111445,18,1
+IT-2011,Engine mount bush,84832744,18,1
+IT-2012,Alternator pulley,84836831,12,1
+IT-2013,Piston ring set,85113397,12,1
+IT-2014,Valve cover gasket,85447279,5,1
+IT-2015,Starter motor relay,85445679,5,1
+IT-2016,Bumper mounting bracket,84826229,18,1
+IT-2017,Exhaust flange gasket,85441570,5,1
+IT-2018,Wiper linkage arm,40168599,18,1
+IT-2019,Seat rail slider,87083074,12,1
+IT-2020,Battery terminal clamp,87086494,18,1
+IT-2021,Coolant reservoir cap,85113140,12,1
+IT-2022,Timing belt tensioner,73183757,12,1
+IT-2023,Spark plug boot,85116464,18,1
+IT-2024,Ball bearing 6204,84823649,28,1
+IT-2025,Disc brake pad set,85448771,5,1
+IT-2026,Brake caliper bracket (heavy duty),84833524,5,1
+IT-2027,Clutch pressure plate (heavy duty),84828998,12,1
+IT-2028,Wheel hub bolt M12 (heavy duty),84839265,12,1
+IT-2029,Radiator hose clamp (heavy duty),73181380,12,1
+IT-2030,Oil seal 45x62 (heavy duty),84824446,28,1
+IT-2031,Steering tie-rod end (heavy duty),87087176,18,1
+IT-2032,Headlamp wiring loop (heavy duty),85115572,12,1
+IT-2033,Fuel line connector (heavy duty),84838138,18,1
+IT-2034,Door hinge assembly (heavy duty),85449185,5,1
+IT-2035,Gear shift cable (heavy duty),84828151,18,1
+IT-2036,Engine mount bush (heavy duty),87086969,18,1
+IT-2037,Alternator pulley (heavy duty),85117777,5,1
+IT-2038,Piston ring set (heavy duty),40161420,18,1
+IT-2039,Valve cover gasket (heavy duty),85446782,5,1
+IT-2040,Starter motor relay (heavy duty),84828368,18,1
+IT-2041,Bumper mounting bracket (heavy duty),87082950,12,1
+IT-2042,Exhaust flange gasket (heavy duty),73182131,18,1
+IT-2043,Wiper linkage arm (heavy duty),87081519,18,1
+IT-2044,Seat rail slider (heavy duty),84825229,18,1
+IT-2045,Battery terminal clamp (heavy duty),84835169,28,1
+IT-2046,Coolant reservoir cap (heavy duty),84837550,18,1
+IT-2047,Timing belt tensioner (heavy duty),84838633,18,1
+IT-2048,Spark plug boot (heavy duty),87088570,18,1
+IT-2049,Ball bearing 6204 (heavy duty),85441273,12,1
+IT-2050,Disc brake pad set (heavy duty),87087769,12,1
+IT-2051,Brake caliper bracket (export grade),85117650,18,1
+IT-2052,Clutch pressure plate (export grade),85118413,18,1
+IT-2053,Wheel hub bolt M12 (export grade),85443177,5,1
+IT-2054,Radiator hose clamp (export grade),85113785,5,1
+IT-2055,Oil seal 45x62 (export grade),73186124,5,1
+IT-2056,Steering tie-rod end (export grade),73186110,12,1
+IT-2057,Headlamp wiring loop (export grade),40163177,18,1
+IT-2058,Fuel line connector (export grade),87084231,5,1
+IT-2059,Door hinge assembly (export grade),85119081,5,1
+IT-2060,Gear shift cable (export grade),85449514,18,1
+IT-2061,Engine mount bush (export grade),84826975,28,1
+IT-2062,Alternator pulley (export grade),85113493,28,1
+IT-2063,Piston ring set (export grade),87084721,12,1
+IT-2064,Valve cover gasket (export grade),40163610,18,1
+IT-2065,Starter motor relay (export grade),87087043,5,1
+IT-2066,Bumper mounting bracket (export grade),84827931,18,1
+IT-2067,Exhaust flange gasket (export grade),85447940,18,1
+IT-2068,Wiper linkage arm (export grade),85445539,18,1
+IT-2069,Seat rail slider (export grade),87084114,5,1
+IT-2070,Battery terminal clamp (export grade),85442166,28,1
+IT-2071,Coolant reservoir cap (export grade),84834031,18,1
+IT-2072,Timing belt tensioner (export grade),85115361,18,1
+IT-2073,Spark plug boot (export grade),84823169,5,1
+IT-2074,Ball bearing 6204 (export grade),87082682,18,1
+IT-2075,Disc brake pad set (export grade),85117098,12,1
+IT-2076,Brake caliper bracket Type B,40163273,18,1
+IT-2077,Clutch pressure plate Type B,87085821,28,1
+IT-2078,Wheel hub bolt M12 Type B,73189582,18,1
+IT-2079,Radiator hose clamp Type B,40162097,18,1
+IT-2080,Oil seal 45x62 Type B,40164024,18,1
+IT-2081,Steering tie-rod end Type B,40168696,18,1
+IT-2082,Headlamp wiring loop Type B,85443249,28,1
+IT-2083,Fuel line connector Type B,87085332,28,1
+IT-2084,Door hinge assembly Type B,87084195,18,1
+IT-2085,Gear shift cable Type B,84838774,28,1
+IT-2086,Engine mount bush Type B,87082610,18,1
+IT-2087,Alternator pulley Type B,84836242,5,1
+IT-2088,Piston ring set Type B,40162958,28,1
+IT-2089,Valve cover gasket Type B,73188525,5,1
+IT-2090,Starter motor relay Type B,40166618,18,1
+IT-2091,Bumper mounting bracket Type B,73186648,18,1
+IT-2092,Exhaust flange gasket Type B,85446270,18,1
+IT-2093,Wiper linkage arm Type B,85113123,18,1
+IT-2094,Seat rail slider Type B,84833799,18,1
+IT-2095,Battery terminal clamp Type B,85116138,28,1
+IT-2096,Coolant reservoir cap Type B,84832239,18,1
+IT-2097,Timing belt tensioner Type B,40169278,18,1
+IT-2098,Spark plug boot Type B,85444879,18,1
+IT-2099,Ball bearing 6204 Type B,84824354,18,1
+IT-2100,Disc brake pad set Type B,85444814,28,1
+IT-2101,Brake caliper bracket Type C,84834831,18,1
+IT-2102,Clutch pressure plate Type C,84836658,28,1
+IT-2103,Wheel hub bolt M12 Type C,87088849,28,1
+IT-2104,Radiator hose clamp Type C,85447553,18,1
+IT-2105,Oil seal 45x62 Type C,73183898,28,1
+IT-2106,Steering tie-rod end Type C,85117546,28,1
+IT-2107,Headlamp wiring loop Type C,85447454,18,1
+IT-2108,Fuel line connector Type C,85443811,18,1
+IT-2109,Door hinge assembly Type C,73188956,12,1
+IT-2110,Gear shift cable Type C,73185513,5,1
+IT-2111,Engine mount bush Type C,84837289,18,1
+IT-2112,Alternator pulley Type C,85113065,18,1
+IT-2113,Piston ring set Type C,87087920,5,1
+IT-2114,Valve cover gasket Type C,73182568,18,1
+IT-2115,Starter motor relay Type C,85449022,18,1
+IT-2116,Bumper mounting bracket Type C,40161022,5,1
+IT-2117,Exhaust flange gasket Type C,84822968,28,1
+IT-2118,Wiper linkage arm Type C,84822334,18,1
+IT-2119,Seat rail slider Type C,40168633,5,1
+IT-2120,Battery terminal clamp Type C,84832966,18,1
+IT-2121,Coolant reservoir cap Type C,87088064,12,1
+IT-2122,Timing belt tensioner Type C,84826964,5,1
+IT-2123,Spark plug boot Type C,87086770,18,1
+IT-2124,Ball bearing 6204 Type C,87086233,18,1
+IT-2125,Disc brake pad set Type C,40167977,12,1
+IT-2126,Brake caliper bracket (zinc plated),40163111,12,1
+IT-2127,Clutch pressure plate (zinc plated),85114943,18,1
+IT-2128,Wheel hub bolt M12 (zinc plated),84823856,5,1
+IT-2129,Radiator hose clamp (zinc plated),84822083,18,1
+IT-2130,Oil seal 45x62 (zinc plated),73188884,18,1
+IT-2131,Steering tie-rod end (zinc plated),85118777,12,1
+IT-2132,Headlamp wiring loop (zinc plated),40161481,18,1
+IT-2133,Fuel line connector (zinc plated),73184762,28,1
+IT-2134,Door hinge assembly (zinc plated),40163685,18,1
+IT-2135,Gear shift cable (zinc plated),85117649,18,1
+IT-2136,Engine mount bush (zinc plated),85118741,5,1
+IT-2137,Alternator pulley (zinc plated),85448653,28,1
+IT-2138,Piston ring set (zinc plated),84822594,18,1
+IT-2139,Valve cover gasket (zinc plated),73188869,18,1
+IT-2140,Starter motor relay (zinc plated),87085765,28,1
+IT-2141,Bumper mounting bracket (zinc plated),40168258,18,1
+IT-2142,Exhaust flange gasket (zinc plated),40165954,18,1
+IT-2143,Wiper linkage arm (zinc plated),87085662,18,1
+IT-2144,Seat rail slider (zinc plated),87084779,18,1
+IT-2145,Battery terminal clamp (zinc plated),87085265,18,1
+IT-2146,Coolant reservoir cap (zinc plated),85114210,12,1
+IT-2147,Timing belt tensioner (zinc plated),87083932,5,1
+IT-2148,Spark plug boot (zinc plated),85118979,18,1
+IT-2149,Ball bearing 6204 (zinc plated),85447876,28,1
+IT-2150,Disc brake pad set (zinc plated),40162623,18,1

@@ -1,0 +1,15 @@
+{
+  "case_id": "UC1-S05",
+  "decision": "hold",
+  "reason_code": [
+    "MISSING_GRN"
+  ],
+  "amount": {
+    "value": 353207.27,
+    "tolerance": 1.0
+  },
+  "must_cite": [
+    "PO-7897"
+  ],
+  "needs_human": true
+}

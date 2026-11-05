@@ -1,0 +1,16 @@
+{
+  "case_id": "UC1-S02",
+  "decision": "hold",
+  "reason_code": [
+    "QTY_SHORT"
+  ],
+  "amount": {
+    "value": 1351706.41,
+    "tolerance": 1.0
+  },
+  "must_cite": [
+    "INV-20041-L2",
+    "GRN-5825"
+  ],
+  "needs_human": true
+}
