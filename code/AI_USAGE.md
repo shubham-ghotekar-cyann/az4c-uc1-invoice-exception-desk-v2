@@ -1,5 +1,8 @@
 # How I used AI coding tools
 
+**Assignment:** AZ4C AI Agent Developer · Role: Associate / Lead · Part A+B · Use Case 1: Invoice
+Exception Desk
+
 **Tool:** Claude Code (Claude Opus 5.5) in VS Code, with the activity hooks shipped in the pack enabled.
 
 ## What the assistant did

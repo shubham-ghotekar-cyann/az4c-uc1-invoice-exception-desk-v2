@@ -1,5 +1,8 @@
 # Invoice exception desk (UC1)
 
+**Role:** Associate / Lead · **Part:** A+B (decision and mock ERP writes, plus the AP manager approval
+step: `--auto-approve` and `approve <run_id>`)
+
 This system takes one supplier invoice and decides **pay**, **hold** or **escalate** under Kestrel's AP
 policy. It cites the records the decision rests on, pauses for the AP manager when approval is needed
 (Part B), and then writes to the mock ERP.
