@@ -37,25 +37,35 @@ load_env_file(CODE_DIR / ".env")
 
 DATA_DIR = Path(os.environ.get("DATA_DIR", REPO_DIR))
 
+for _stream in (sys.stdout, sys.stderr):  # vendor text and model replies are UTF-8; Windows consoles are not
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
 
-def run_case(case: dict, auto_approve: bool) -> dict:
+
+def run_case(case: dict, auto_approve: bool, out_path: str | None = None) -> dict:
     """Run one case end to end and return its result (format: ../schema/result.schema.json)."""
-    raise NotImplementedError("Build your system here.")
+    from app.pipeline import run_case as _run
+    return _run(case, auto_approve, out_path)
 
 
-def approve(run_id: str, action: str) -> None:
+def approve(run_id: str, action: str, decision: str | None = None, reason_code: str | None = None,
+            note: str | None = None) -> None:
     """Resume a paused run with the person's decision."""
-    raise NotImplementedError("Build the approval step here (Parts B and C).")
+    from app.pipeline import approve as _approve
+    result = _approve(run_id, action, decision, reason_code, note)
+    print(f"{run_id}: {result['approval']['status']} -> {result['decision']} / {result['reason_code']}; "
+          f"writes: {result.get('mock_system_writes', [])}")
 
 
 def score_case(result: dict, expected: dict) -> float:
     """Score one result against its expected answer, from 0 to 1."""
-    raise NotImplementedError("Write your scoring here.")
+    from app.scoring import score_case as _score
+    return _score(result, expected)
 
 
 def cmd_run(args) -> None:
     case = json.loads(Path(args.case).read_text(encoding="utf-8"))
-    result = run_case(case, args.auto_approve)
+    result = run_case(case, args.auto_approve, args.out)
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -66,30 +76,40 @@ def cmd_eval(args) -> None:
     expected_dir = cases_dir / "expected"
     if not expected_dir.is_dir():
         expected_dir = cases_dir.parent / "expected"
-    per_case = []
+    import jsonschema
+    from app.scoring import field_checks
+    schema = json.loads((REPO_DIR / "schema" / "result.schema.json").read_text(encoding="utf-8"))
+    per_case, calls = [], []
     for case_file in sorted(cases_dir.glob("*.json")):
         case = json.loads(case_file.read_text(encoding="utf-8"))
         expected = json.loads((expected_dir / case_file.name).read_text(encoding="utf-8"))
         try:
-            result = run_case(case, auto_approve=True)
             out = CODE_DIR / "out" / case_file.name
+            result = run_case(case, auto_approve=True, out_path=str(out))
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+            jsonschema.validate(result, schema)
             score = score_case(result, expected)
+            failed = [k for k, ok in field_checks(result, expected).items() if not ok]
+            calls.append(result["llm_usage"]["calls"])
+            detail = (f"{result['decision']:<8} {result['reason_code']:<16} team={'+'.join(result['team'])} "
+                      f"calls={result['llm_usage']['calls']} tokens={result['llm_usage']['tokens']}"
+                      + (f"  FAILED: {failed}" if failed else ""))
         except Exception as e:
             print(f"{case['case_id']}: {type(e).__name__}: {e}", file=sys.stderr)
-            score = 0.0
+            score, detail = 0.0, "error"
         per_case.append({"case_id": case["case_id"], "score": score})
-        print(f"{case['case_id']}  {score:.2f}")
+        print(f"{case['case_id']}  {score:.2f}  {detail}")
     total = round(100 * sum(c["score"] for c in per_case) / len(per_case), 1) if per_case else 0.0
-    print(f"Score: {total}% over {len(per_case)} cases")
+    print(f"Score: {total}% over {len(per_case)} cases"
+          + (f"; model calls per case: avg {sum(calls) / len(calls):.1f}, max {max(calls)}" if calls else ""))
     if cases_dir.is_relative_to(CODE_DIR / "tests"):
         report = {"cases": len(per_case), "score": total, "per_case": per_case}
         (CODE_DIR / "tests" / "score.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
 
 
 def cmd_approve(args) -> None:
-    approve(args.run_id, args.action)
+    approve(args.run_id, args.action, args.decision, args.reason_code, args.note)
 
 
 def main() -> None:
@@ -109,6 +129,9 @@ def main() -> None:
     p = sub.add_parser("approve", help="resume a paused run")
     p.add_argument("run_id")
     p.add_argument("--action", required=True, choices=["approve", "reject", "change"])
+    p.add_argument("--decision", choices=["pay", "hold", "escalate"], help="with --action change: the new decision")
+    p.add_argument("--reason-code", help="with --action change: the new reason code (default: keep)")
+    p.add_argument("--note", help="AP manager's note, stored with the approval")
     p.set_defaults(func=cmd_approve)
 
     p = sub.add_parser("verify-pack", help="check pack files are unchanged, committed and not ignored")
