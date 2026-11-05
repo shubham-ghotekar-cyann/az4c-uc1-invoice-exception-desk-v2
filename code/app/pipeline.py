@@ -37,9 +37,9 @@ def plan_team(trace: Trace, llm: LLM, summary: dict) -> list[str]:
     run = run_orchestrator(llm, summary)
     required = required_specialists(summary)
     if run.ok:
-        chosen = {s.specialist: s.reason for s in run.output.steps if s.run}
-        for s in run.output.steps:
-            trace.log("plan_step", specialist=s.specialist, run=s.run, reason=s.reason, by="orchestrator")
+        chosen = {name: c.reason for name, c in run.output.steps if c.run}
+        for name, c in run.output.steps:
+            trace.log("plan_step", specialist=name, run=c.run, reason=c.reason, by="orchestrator")
     else:
         chosen = {}
         trace.log("plan_fallback", reason=f"orchestrator failed ({run.error}); using required specialists")

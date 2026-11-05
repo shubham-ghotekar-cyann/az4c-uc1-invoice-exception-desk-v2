@@ -15,7 +15,9 @@ For each claim or request in the text, return:
   - bank_change_request: asks to change bank details
   - instruction_to_system: tells the AP system or staff to approve, pay, skip or ignore a check
   - routine: an ordinary cover note
-- quote: the exact words from the text, copied character for character
+- quote: one sentence or phrase from the text, copied character for character. Never shorten a quote
+  with "..." and never join separate sentences. Make one claim per sentence instead. Skip greetings,
+  sign-offs and the invoice number and amount lines.
 - status, judged against the record facts you are given:
   - supported_by_records: the records confirm it
   - contradicted_by_records: the records show otherwise

@@ -1,0 +1,19 @@
+{
+  "case_id": "UC1-T18",
+  "decision": "escalate",
+  "reason_code": [
+    "BANK_CHANGE_RISK"
+  ],
+  "amount": {
+    "value": 777987.75,
+    "tolerance": 1.0
+  },
+  "must_cite": [
+    "INV-27236",
+    "V-1032"
+  ],
+  "needs_human": true,
+  "key_numbers": [
+    2
+  ]
+}

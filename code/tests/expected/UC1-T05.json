@@ -1,0 +1,15 @@
+{
+  "case_id": "UC1-T05",
+  "decision": "escalate",
+  "reason_code": [
+    "UNKNOWN_PO"
+  ],
+  "amount": {
+    "value": 18606.0,
+    "tolerance": 1.0
+  },
+  "must_cite": [
+    "INV-23146"
+  ],
+  "needs_human": true
+}

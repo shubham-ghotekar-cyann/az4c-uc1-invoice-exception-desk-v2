@@ -41,15 +41,21 @@ def _compact(r: ToolResult) -> dict:
 
 
 # ======================================================================= orchestrator
-class PlanStep(BaseModel):
-    specialist: Literal["matching", "vendor_risk", "document_screener"]
+class PlanChoice(BaseModel):
     run: bool
     reason: str
 
 
 class OrchestratorPlan(BaseModel):
-    steps: list[PlanStep]
+    """One required field per specialist, so the strict schema itself guarantees a complete plan."""
+    matching: PlanChoice
+    vendor_risk: PlanChoice
+    document_screener: PlanChoice
     summary: str = Field(description="one sentence on what this invoice needs")
+
+    @property
+    def steps(self) -> list[tuple[str, PlanChoice]]:
+        return [(name, getattr(self, name)) for name in SPECIALISTS]
 
 
 def required_specialists(summary: dict) -> dict[str, str]:
@@ -74,18 +80,15 @@ def required_specialists(summary: dict) -> dict[str, str]:
 
 def _fake_orchestrator(payload: dict) -> dict:
     req = required_specialists(payload["invoice_summary"])
-    return {"steps": [{"specialist": s, "run": s in req, "reason": req.get(s, "no signal in the summary")}
-                      for s in SPECIALISTS], "summary": "fake plan from summary signals"}
+    return {**{s: {"run": s in req, "reason": req.get(s, "no signal in the summary")} for s in SPECIALISTS},
+            "summary": "fake plan from summary signals"}
 
 
 def run_orchestrator(llm: LLM, summary: dict) -> AgentRun:
     payload = {"invoice_summary": summary}
 
     def validate(out: OrchestratorPlan) -> list[str]:
-        names = [s.specialist for s in out.steps]
-        problems = [f"{s} must appear exactly once in steps" for s in SPECIALISTS if names.count(s) != 1]
-        problems += [f"{s.specialist}: reason is empty" for s in out.steps if not s.reason.strip()]
-        return problems
+        return [f"{name}: reason is empty" for name, choice in out.steps if not choice.reason.strip()]
 
     return llm.run("orchestrator", "orchestrator", _prompt("orchestrator"), _user_message(payload),
                    OrchestratorPlan, validate, fake=lambda a, u: _fake_orchestrator(_payload_of(u)))

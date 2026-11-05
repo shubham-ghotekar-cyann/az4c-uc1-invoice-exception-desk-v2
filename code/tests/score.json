@@ -1,0 +1,86 @@
+{
+  "cases": 20,
+  "score": 100.0,
+  "per_case": [
+    {
+      "case_id": "UC1-T01",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T02",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T03",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T04",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T05",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T06",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T07",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T08",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T09",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T10",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T11",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T12",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T13",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T14",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T15",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T16",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T17",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T18",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T19",
+      "score": 1.0
+    },
+    {
+      "case_id": "UC1-T20",
+      "score": 1.0
+    }
+  ]
+}

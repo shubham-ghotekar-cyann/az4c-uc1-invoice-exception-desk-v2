@@ -1,0 +1,20 @@
+{
+  "case_id": "UC1-T11",
+  "decision": "hold",
+  "reason_code": [
+    "QTY_SHORT"
+  ],
+  "amount": {
+    "value": 255598.36,
+    "tolerance": 1.0
+  },
+  "must_cite": [
+    "INV-21128",
+    "INV-21128-L1"
+  ],
+  "needs_human": true,
+  "key_numbers": [
+    21,
+    17
+  ]
+}

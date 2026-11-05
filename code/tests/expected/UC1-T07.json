@@ -1,0 +1,16 @@
+{
+  "case_id": "UC1-T07",
+  "decision": "pay",
+  "reason_code": [
+    "CLEAN_MATCH"
+  ],
+  "amount": {
+    "value": 4335132.19,
+    "tolerance": 1.0
+  },
+  "must_cite": [
+    "INV-22458",
+    "PO-7645"
+  ],
+  "needs_human": true
+}

@@ -82,6 +82,10 @@ class ProviderError(Exception):
     pass
 
 
+class GenerationError(Exception):
+    """The provider could not produce schema-valid JSON (Groq: json_validate_failed). Retry the same provider."""
+
+
 @dataclass
 class Provider:
     name: str
@@ -120,6 +124,10 @@ class Provider:
                 wait = min(max(float(retry_after or 2 ** (wait_no + 1)), 1.0), 30.0)
                 trace.log("rate_limit_wait", agent=agent, provider=self.name, model=self.model, seconds=wait)
                 time.sleep(wait)
+            except openai.BadRequestError as e:
+                if "json_validate_failed" in str(e) or "Failed to generate JSON" in str(e):
+                    raise GenerationError("provider could not generate schema-valid JSON") from e
+                raise ProviderError(f"{type(e).__name__}: {str(e)[:300]}") from e
             except openai.APIError as e:
                 raise ProviderError(f"{type(e).__name__}: {str(e)[:300]}") from e
         choice = resp.choices[0]
@@ -185,6 +193,11 @@ class LLM:
             self.budget.calls += 1
             try:
                 text, p_tok, c_tok = prov.complete(messages, schema_model, self.trace, agent)
+            except GenerationError as e:
+                self.trace.log("llm_call", **event, status="schema_invalid", error=str(e),
+                               latency_ms=int((time.time() - started) * 1000))
+                retry_reason = f"schema_invalid: {e}"
+                continue
             except ProviderError as e:
                 self.trace.log("llm_call", **event, status="provider_error", error=str(e),
                                latency_ms=int((time.time() - started) * 1000))

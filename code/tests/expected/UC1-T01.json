@@ -1,0 +1,22 @@
+{
+  "case_id": "UC1-T01",
+  "decision": "hold",
+  "reason_code": [
+    "PRICE_VARIANCE"
+  ],
+  "amount": {
+    "value": 86023.81,
+    "tolerance": 1.0
+  },
+  "must_cite": [
+    "INV-20813",
+    "INV-20813-L3",
+    "PO-7817"
+  ],
+  "needs_human": true,
+  "key_numbers": [
+    477.66,
+    450.62,
+    6.0
+  ]
+}

@@ -27,7 +27,7 @@ def out_dir() -> Path:
 # Models. Groq is primary, Gemini is the fallback provider.
 ORCHESTRATOR_MODEL = lambda: env("ORCHESTRATOR_MODEL", "openai/gpt-oss-20b")
 SPECIALIST_MODEL = lambda: env("SPECIALIST_MODEL", "openai/gpt-oss-120b")
-FALLBACK_MODEL = lambda: env("FALLBACK_MODEL", "gemini-2.5-flash")
+FALLBACK_MODEL = lambda: env("FALLBACK_MODEL", "gemini-3.5-flash")
 
 # Per-case budget. A case that hits it finishes on tool results alone.
 MAX_CALLS_PER_CASE = lambda: int(env("MAX_CALLS_PER_CASE", "8"))

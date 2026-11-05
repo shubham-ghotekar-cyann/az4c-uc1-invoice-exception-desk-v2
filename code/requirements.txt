@@ -1,2 +1,22 @@
-# List every package your code imports, pinned to an exact version (name==version).
-# Python 3.12.
+# Python 3.12. Direct dependencies: openai (Groq + Gemini via their OpenAI-compatible endpoints),
+# pydantic (agent output schemas), jsonschema (eval checks results against schema/result.schema.json).
+# Everything below is pinned, including transitive packages, from a clean 3.12 venv.
+annotated-types==0.8.0
+anyio==4.16.0
+attrs==26.1.0
+h11==0.16.0
+httpcore2==2.16.0
+httpx2==2.16.0
+idna==3.20
+jiter==0.18.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+openai==3.46.0
+pydantic==2.14.3
+pydantic-core==2.50.4
+referencing==0.37.0
+rpds-py==2026.9.1
+sniffio==1.3.1
+truststore==0.10.5
+typing-extensions==4.16.0
+typing-inspection==0.4.5
